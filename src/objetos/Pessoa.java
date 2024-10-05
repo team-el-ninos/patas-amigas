@@ -1,9 +1,11 @@
+package objetos;
+
 import java.util.Date;
 
 public class Pessoa {
     private String nome;
     private Date dataDeNascimento;
-    private int genero;
+    private char genero;
     private String CPF;
     private Endereco endereco;
     private Telefone telefone;
@@ -13,7 +15,7 @@ public class Pessoa {
     public Pessoa() {
     }
 
-    public Pessoa(String nome, Date dataDeNascimento, int genero, String CPF, Endereco endereco, Telefone telefone, String email, String senha) {
+    public Pessoa(String nome, Date dataDeNascimento, char genero, String CPF, Endereco endereco, Telefone telefone, String email, String senha) {
         this.nome = nome;
         this.dataDeNascimento = dataDeNascimento;
         this.genero = genero;
@@ -40,11 +42,11 @@ public class Pessoa {
         this.dataDeNascimento = dataDeNascimento;
     }
 
-    public int getGenero() {
+    public char getGenero() {
         return genero;
     }
 
-    public void setGenero(int genero) {
+    public void setGenero(char genero) {
         this.genero = genero;
     }
 
@@ -87,4 +89,5 @@ public class Pessoa {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
 }

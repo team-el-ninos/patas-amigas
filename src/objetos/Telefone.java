@@ -1,3 +1,5 @@
+package objetos;
+
 public class Telefone {
     private String DDD;
     private String numero;
@@ -21,5 +23,10 @@ public class Telefone {
 
     public void setNumero(String numero) {
         this.numero = numero;
+    }
+
+    @Override
+    public String toString() { // 11 999420878
+        return DDD + " " + numero;
     }
 }
