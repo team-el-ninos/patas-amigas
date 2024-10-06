@@ -1,5 +1,5 @@
 import objetos.*;
-import objetos.Tutores;
+import objetos.Tutor;
 import java.io.IOException;
 
 import javax.xml.crypto.Data;
@@ -14,7 +14,7 @@ public class Main {
     private static List<Adotante> adotantes = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         clearScreen();
         Scanner scanner = new Scanner(System.in);
         int choice;
@@ -125,8 +125,10 @@ public class Main {
                     System.out.print("Nome funcionário: ");
                     String nomeFuncionario = scanner.nextLine();
 
-                    System.out.print("Data de nascimento: ");
-                    String dataNascimentoFuncionario = scanner.nextLine();
+                    System.out.print("Data de nascimento (dia/mes/ano): ");
+
+                    sdf = new SimpleDateFormat("dd/MM/yyyy");
+                    Date dataNascimentoFuncionario = sdf.parse(scanner.nextLine());
 
                     System.out.print("Gênero [M/F/O]: ");
                     char generoFuncionario = scanner.nextLine().charAt(0);
@@ -136,25 +138,25 @@ public class Main {
 
                     System.out.println("Endereço:");
                     System.out.print("Rua: ");
-                    String rua1 = scanner.nextLine();
+                    rua = scanner.nextLine();
                     System.out.print("Número: ");
-                    String numero1 = scanner.nextLine();
+                    numero = scanner.nextLine();
                     scanner.nextLine();
                     System.out.print("Bairro: ");
-                    String bairro1 = scanner.nextLine();
+                    bairro = scanner.nextLine();
                     System.out.print("Cidade: ");
-                    String cidade1 = scanner.nextLine();
+                    cidade = scanner.nextLine();
                     System.out.print("Estado: ");
-                    String estado1 = scanner.nextLine();
+                    estado = scanner.nextLine();
                     System.out.print("CEP: ");
-                    String cep1 = scanner.nextLine();
+                    cep = scanner.nextLine();
                     Endereco enderecoFuncionario = new Endereco(rua, numero, bairro, cidade, estado, cep);
 
                     System.out.println("Telefone:");
                     System.out.print("DDD: ");
-                    String ddd1 = scanner.nextLine();
+                    ddd = scanner.nextLine();
                     System.out.print("Número do telefone: ");
-                    String numeroTelefone1 = scanner.nextLine();
+                    numeroTelefone = scanner.nextLine();
                     Telefone telefoneFuncionario = new Telefone(ddd, numeroTelefone);
 
                     System.out.print("Email: ");
@@ -163,8 +165,11 @@ public class Main {
                     System.out.print("Senha: ");
                     String senhaFuncionario = scanner.nextLine();
 
-                     System.out.print("Data de contratação: ");
-                    String dataContratacaoFuncionario = scanner.nextLine();
+                    System.out.print("Data de contratação (dia/mes/ano): ");
+
+                    sdf = new SimpleDateFormat("dd/MM/yyyy");
+                    Date dataContratacaoFuncionario = sdf.parse(scanner.nextLine());
+
 
                     System.out.print("Cargo: ");
                     String cargoFuncionario = scanner.nextLine();
@@ -177,8 +182,9 @@ public class Main {
                     int departamentoFuncionario = scanner.nextInt();
                     scanner.nextLine();
 
+                    String codigoFuncionario = gerarCodigo("funcionario");
 
-                    Funcionario novoFuncionario = new Funcionario(nomeFuncionario, dataNascimentoFuncionario, generoFuncionario, cpfFuncionario, enderecoFuncionario, telefoneFuncionario, emailFuncionario, senhaFuncionario, dataContratacaoFuncionario,
+                    Funcionario novoFuncionario = new Funcionario(nomeFuncionario, dataNascimentoFuncionario, generoFuncionario, cpfFuncionario, enderecoFuncionario, telefoneFuncionario, emailFuncionario, senhaFuncionario, codigoFuncionario, dataContratacaoFuncionario,
                                                                    cargoFuncionario, salarioFuncionario, departamentoFuncionario);
                     funcionarios.add(novoFuncionario);
                     System.out.println("Funcionário cadastrado com sucesso");
