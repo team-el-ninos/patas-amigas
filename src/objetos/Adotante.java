@@ -1,5 +1,6 @@
 package objetos;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -14,6 +15,14 @@ public class Adotante extends Pessoa {
         this.codigo = codigo;
         this.preferenciaDeAdocao = preferenciaDeAdocao;
         this.historicoAdocoes = historicoAdocoes;
+        this.status = status;
+    }
+
+    public Adotante(String nome, Date dataDeNascimento, char genero, String CPF, Endereco endereco, Telefone telefone, String email, String senha, String codigo, String preferenciaDeAdocao, boolean status) {
+        super(nome, dataDeNascimento, genero, CPF, endereco, telefone, email, senha);
+        this.codigo = codigo;
+        this.preferenciaDeAdocao = preferenciaDeAdocao;
+        this.historicoAdocoes = new ArrayList<>();
         this.status = status;
     }
 
