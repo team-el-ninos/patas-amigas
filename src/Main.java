@@ -1,6 +1,7 @@
+import objetos.Endereco;
 import objetos.Funcionario;
+import objetos.Telefone;
 import objetos.Tutores;
-
 import java.io.IOException;
 import java.util.List;
 import java.util.ArrayList;
@@ -63,8 +64,55 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    System.out.println("Cadastrando Tutor... (TODO)");
-                    break;
+                    System.out.println("Cadastro Tutor:");
+                    System.out.print("Nome tutor: ");
+                    String nomeTutor = scanner.nextLine();
+
+                    System.out.print("Data de nascimento: ");
+                    String dataNascimentoTutor = scanner.nextLine();
+
+                    System.out.print("Gênero [M/F/O]: ");
+                    char generoTutor = scanner.nextLine().charAt(0);
+
+                    System.out.print("CPF: ");
+                    String cpfTutor = scanner.nextLine();
+
+                    System.out.println("Endereço:");
+                    System.out.print("Rua: ");
+                    String rua = scanner.nextLine();
+                    System.out.print("Número: ");
+                    String numero = scanner.nextLine();
+                    scanner.nextLine();  
+                    System.out.print("Bairro: ");
+                    String bairro = scanner.nextLine();
+                    System.out.print("Cidade: ");
+                    String cidade = scanner.nextLine();
+                    System.out.print("Estado: ");
+                    String estado = scanner.nextLine();
+                    System.out.print("CEP: ");
+                    String cep = scanner.nextLine();
+                    Endereco enderecoTutor = new Endereco(rua, numero, bairro, cidade, estado, cep);
+
+                    System.out.println("Telefone:");
+                    System.out.print("DDD: ");
+                    String ddd = scanner.nextLine();
+                    System.out.print("Número do telefone: ");
+                    String numeroTelefone = scanner.nextLine();
+                    Telefone telefoneTutor = new Telefone(ddd, numeroTelefone);
+
+                    System.out.print("Email: ");
+                    String emailTutor = scanner.nextLine();
+
+                    System.out.print("Senha: ");
+                    String senhaTutor = scanner.nextLine();
+
+                    System.out.print("Animais sob custódia: ");
+                    int animaisSobCustodia = scanner.nextInt();
+
+                    Tutores novoTutor = new Tutores(nomeTutor, dataNascimentoTutor, generoTutor, cpfTutor, enderecoTutor, telefoneTutor emailTutor, senhaTutor, animaisSobCustodia, true);
+                    tutores.add(novoTutor);
+
+
                 case 2:
                     System.out.println("Cadastrando Funcionário... (TODO)");
                     break;
